@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rh32eu5il-python-gitops
+  description: This is GitOps manifest for rh32eu5il-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=rh32eu5il-python
+    backstage.io/kubernetes-id: rh32eu5il-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: rh32eu5il-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:rh32eu5il-python
